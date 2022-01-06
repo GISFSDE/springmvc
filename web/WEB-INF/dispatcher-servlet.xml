@@ -4,11 +4,11 @@
        xmlns:context="http://www.springframework.org/schema/context"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
 
-<!--   注解方式-->
+<!--   注解方式，自动扫描包，让指定包下的注解生效，由IOC容器统一管理-->
     <context:component-scan base-package="wormday.springmvc.helloworld"/>
 
 
-    <!--指定视图解析器
+    <!--视图解析器
     JSP 文件配置在【WEB-INF】文件夹中的【page】文件夹下，【WEB-INF】是 Java Web 中默认的安全目录，是不允许用户直接访问的（也就是你说你通过 localhost/WEB-INF/ 这样的方式是永远访问不到的）
 但是我们需要将这告诉给视图解析器-->
     <bean  id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">

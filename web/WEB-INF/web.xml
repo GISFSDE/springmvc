@@ -10,6 +10,7 @@
     <listener>
         <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
     </listener>
+    <!--  DispatcherServlet：Springmvc核心，请求分发器/前端控制器/中央控制器  -->
     <servlet>
         <servlet-name>dispatcher</servlet-name>
         <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
@@ -17,11 +18,13 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>dispatcher</servlet-name>
-<!--        <url-pattern>*.form</url-pattern>-->
+        <!--        <url-pattern>*.form</url-pattern>
+        / 只匹配所有的请求不回去匹配jsp页面
+        /* 匹配所有的请求，包括jsp页面  -->
         <url-pattern>/</url-pattern>
     </servlet-mapping>
-<!--跟 Servlet 中的一样，该方法只对 POST 方法有效（因为是直接处理的 request）
- 字符编码过滤器,解决中文乱码-->
+    <!--跟 Servlet 中的一样，该方法只对 POST 方法有效（因为是直接处理的 request）
+     字符编码过滤器,解决中文乱码，也可直接继承servlet的filter-->
     <filter>
         <filter-name>CharacterEncodingFilter</filter-name>
         <filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
